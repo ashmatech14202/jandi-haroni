@@ -43,7 +43,7 @@ const AdminLogin = () => {
       const { data, error } = await supabase.auth.signInWithPassword({ email, password });
       if (error) throw error;
 
-      const isAdmin = true;
+      const { data: isAdmin } = await supabase.rpc("has_role", { _user_id: data.user.id, _role: "admin", }); if (!isAdmin) { await supabase.auth.signOut(); toast.error("You are not authorized as an admin"); return; }
 
       toast.success("Welcome, Admin!");
       navigate("/admin");
