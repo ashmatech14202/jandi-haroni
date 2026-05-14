@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Jhandi Munda" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#7C3AED" />
+    <meta name="msapplication-TileColor" content="#7C3AED" />
+
+    <title>Jhandi Munda</title>
+    <meta name="description" content="Traditional Indian Jhandi Munda dice rolling simulator">
+    <meta name="author" content="Lovable" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/icon-152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/icon-152.png" />
+
+    <!-- iOS Splash Screens -->
+    <link rel="apple-touch-startup-image" href="/splash-2048.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="/splash-1668.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="/splash-1536.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="/splash-1242.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="/splash-1125.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="/splash-750.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
+    <link rel="apple-touch-startup-image" href="/splash-640.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Jhandi Munda">
+    <meta property="og:description" content="Traditional Indian Jhandi Munda dice rolling simulator">
+    <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/038c6158-6ac6-4ce7-9995-98173d49c23d/id-preview-bf9e0a7f--494c7e0b-d269-43ec-8f5d-365700e9e1e4.lovable.app-1774817189449.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Lovable" />
+    <meta name="twitter:title" content="Jhandi Munda">
+    <meta name="twitter:description" content="Traditional Indian Jhandi Munda dice rolling simulator">
+    <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/038c6158-6ac6-4ce7-9995-98173d49c23d/id-preview-bf9e0a7f--494c7e0b-d269-43ec-8f5d-365700e9e1e4.lovable.app-1774817189449.png">
+</head>
+
+  <body>
+    <style>
+      #app-splash {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        background: linear-gradient(180deg, #5B21B6 0%, #7C3AED 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.5s ease-out;
+      }
+      #app-splash.fade-out {
+        opacity: 0;
+        pointer-events: none;
+      }
+      #app-splash img {
+        width: 140px;
+        height: 140px;
+        border-radius: 28px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        animation: splash-pop 0.6s ease-out;
+      }
+      #app-splash h1 {
+        margin: 24px 0 8px;
+        font-family: Georgia, 'Times New Roman', serif;
+        color: #FFD66B;
+        font-size: 32px;
+        letter-spacing: 1px;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      }
+      #app-splash p {
+        margin: 0 0 32px;
+        color: rgba(255,255,255,0.7);
+        font-family: system-ui, -apple-system, sans-serif;
+        font-size: 13px;
+        letter-spacing: 2px;
+      }
+      .splash-loader {
+        width: 44px;
+        height: 44px;
+        border: 3px solid rgba(255, 214, 107, 0.25);
+        border-top-color: #FFD66B;
+        border-radius: 50%;
+        animation: splash-spin 0.9s linear infinite;
+      }
+      @keyframes splash-spin { to { transform: rotate(360deg); } }
+      @keyframes splash-pop {
+        0% { transform: scale(0.6); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+      }
+    </style>
+    <div id="app-splash">
+      <img src="/icon-192.png" alt="Jhandi Munda" />
+      <h1>Jhandi Munda</h1>
+      <p>LOADING</p>
+      <div class="splash-loader"></div>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
